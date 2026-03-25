@@ -29,6 +29,15 @@
   --color-text-muted:   #6B7280;
   --color-bg-light:     #F0F4FF;
 
+  /* Bridgerton Palette */
+  --color-bridgerton-cream:      #F8EDD8;
+  --color-bridgerton-parchment:  #F0DEB8;
+  --color-bridgerton-green:      #0C2410;
+  --color-bridgerton-wine:       #1A0808;
+  --color-bridgerton-mahogany:   #2C1206;
+  --color-bridgerton-rose:       #C9829A;
+  --color-bridgerton-amber:      #C87941;
+
   /* Typography */
   --font-display:   'Playfair Display', Georgia, serif;
   --font-romantic:  'Cormorant Garamond', Georgia, serif;
@@ -77,7 +86,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--color-text-body);
-  background: var(--color-warm-white);
+  background: #0a0906;
   overflow-x: hidden;
   line-height: 1.7;
 }
@@ -252,7 +261,7 @@ a {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-deep-navy);
+  color: var(--color-bridgerton-cream);
   margin-bottom: 1rem;
   transition: all 0.4s ease;
   cursor: default;
@@ -304,9 +313,10 @@ a {
 }
 
 .nav.scrolled {
-  background: rgba(13, 36, 97, 0.88);
+  background: rgba(10, 5, 2, 0.90);
   backdrop-filter: blur(12px);
   pointer-events: auto;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .nav__link {
@@ -359,9 +369,10 @@ a {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13, 36, 97, 0.45) 0%,
-    rgba(13, 36, 97, 0.65) 50%,
-    rgba(0, 0, 0, 0.85) 100%
+    rgba(10, 5, 2, 0.35) 0%,
+    rgba(26, 8, 8, 0.55) 40%,
+    rgba(10, 6, 2, 0.82) 75%,
+    rgba(5, 3, 1, 0.95) 100%
   );
   z-index: 1;
 }
@@ -548,33 +559,60 @@ a {
    8. OUR STORY SECTION
    ============================================================ */
 .story {
-  background: var(--color-warm-white);
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(200,121,65,0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(180,100,60,0.07) 0%, transparent 45%),
+    linear-gradient(160deg, #2C1A0A 0%, #3A200C 30%, #2A1608 65%, #1E0F06 100%);
   padding: var(--space-xl) var(--space-sm) var(--space-lg);
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle dot-grid background */
+/* Bridgerton botanical dot accent */
 .story::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(26,58,143,0.06) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image:
+    radial-gradient(circle, rgba(212,175,55,0.06) 1px, transparent 1px),
+    radial-gradient(circle, rgba(200,121,65,0.04) 1px, transparent 1px);
+  background-size: 36px 36px, 72px 72px;
+  background-position: 0 0, 18px 18px;
   pointer-events: none;
+}
+
+/* Gold shimmer top border */
+.story::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-bridgerton-amber), var(--color-gold), var(--color-bridgerton-amber), transparent);
 }
 
 .story__header {
   text-align: center;
   max-width: 680px;
   margin: 0 auto var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.story .section-title { color: var(--color-bridgerton-cream); }
+.story .section-title:hover {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright), var(--color-gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s linear;
 }
 
 .story__intro {
   font-family: var(--font-romantic);
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   font-style: italic;
-  color: var(--color-text-muted);
+  color: rgba(248, 237, 216, 0.7);
   line-height: 1.8;
 }
 
@@ -621,7 +659,7 @@ a {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--color-warm-white);
+  background: #3A200C;
   border: 2.5px solid var(--color-gold);
   display: flex;
   align-items: center;
@@ -716,7 +754,7 @@ a {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.8vw, 1.65rem);
   font-weight: 700;
-  color: var(--color-deep-navy);
+  color: var(--color-bridgerton-cream);
   margin-bottom: 0.75rem;
   line-height: 1.25;
 }
@@ -724,14 +762,19 @@ a {
 .timeline__text-col p {
   font-size: 0.98rem;
   line-height: 1.8;
-  color: var(--color-text-muted);
+  color: rgba(248, 237, 216, 0.72);
+}
+
+.timeline {
+  position: relative;
+  z-index: 1;
 }
 
 .story__proposal-quote {
   font-family: var(--font-romantic);
   font-style: italic;
   font-size: 1.05rem !important;
-  color: var(--color-royal-blue) !important;
+  color: var(--color-champagne) !important;
   border-left: 3px solid var(--color-gold);
   padding-left: 1rem;
   margin-bottom: 0.75rem;
@@ -748,14 +791,50 @@ a {
    9. GALLERY SECTION
    ============================================================ */
 .gallery {
-  background: var(--color-bg-light);
+  background:
+    radial-gradient(ellipse at 10% 30%, rgba(212,175,55,0.07) 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 70%, rgba(212,175,55,0.06) 0%, transparent 40%),
+    linear-gradient(170deg, #0C2410 0%, #102C14 40%, #0A2010 70%, #081A0C 100%);
   padding: var(--space-xl) var(--space-sm) var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Botanical vine pattern */
+.gallery::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Gold top border */
+.gallery::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
 .gallery__header {
   text-align: center;
   max-width: 680px;
   margin: 0 auto var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.gallery .section-title { color: var(--color-bridgerton-cream); }
+.gallery .section-title:hover {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright), var(--color-gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s linear;
 }
 
 /* Filter tabs */
@@ -765,6 +844,8 @@ a {
   justify-content: center;
   gap: 0.6rem;
   margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
 }
 
 .gallery__filter-btn {
@@ -810,6 +891,8 @@ a {
   column-gap: 12px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .gallery__item {
@@ -1021,7 +1104,9 @@ a {
    10. WEDDING DAY SECTION
    ============================================================ */
 .wedding-day {
-  background: var(--color-deep-navy);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, #1A0808 0%, #150606 40%, #100404 70%, #0C0303 100%);
   color: var(--color-ivory);
   padding: 0 0 var(--space-xl);
   text-align: center;
@@ -1209,9 +1294,9 @@ a {
    ============================================================ */
 .vows {
   background:
-    radial-gradient(ellipse at 15% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 80%, rgba(212, 175, 55, 0.10) 0%, transparent 50%),
-    linear-gradient(160deg, #0a1d52 0%, #0D2461 40%, #122a70 70%, #0a1d52 100%);
+    radial-gradient(ellipse at 15% 20%, rgba(212, 175, 55, 0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(200, 130, 154, 0.08) 0%, transparent 50%),
+    linear-gradient(160deg, #080f30 0%, #0D2461 35%, #0f2a6a 65%, #080f30 100%);
   padding: var(--space-xl) var(--space-sm);
   position: relative;
   overflow: hidden;
@@ -1310,21 +1395,21 @@ a {
   object-position: center top;
 }
 
-/* Mark's photo: face is upper-left of frame (two people visible) */
+/* Mark's photo: face is upper-left of frame (two people visible, helper on right) */
 .vow-scroll__portrait-img--mark {
-  object-position: 28% 8%;
+  object-position: 22% 5%;
 }
 
-/* Carmela's photo: centered, face near top third */
+/* Carmela's photo: centered, full face fills upper frame */
 .vow-scroll__portrait-img--carmela {
-  object-position: center 10%;
+  object-position: center 5%;
 }
 
 .vow-scroll__name {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-deep-navy);
+  color: #1a0d06;
   margin-bottom: 0.2rem;
 }
 
@@ -1446,7 +1531,9 @@ a {
    12. FOOTER
    ============================================================ */
 .footer {
-  background: var(--color-deep-navy);
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(212,175,55,0.08) 0%, transparent 55%),
+    linear-gradient(0deg, #0a0906 0%, #12090a 50%, #0e0507 100%);
   color: var(--color-ivory);
   text-align: center;
   padding: 6rem 1.5rem 4rem;
