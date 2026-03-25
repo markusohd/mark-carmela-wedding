@@ -1494,26 +1494,77 @@ a {
    13. RESPONSIVE
    ============================================================ */
 
-/* ── Tablet (≥768px): timeline already handles itself ── */
+/* ── Tablet (768px – 1023px) ── */
+@media (max-width: 1023px) {
+  .timeline__item {
+    grid-template-columns: 1fr 60px 1fr;
+  }
+
+  .story { padding: 4rem 1.5rem 3rem; }
+  .gallery { padding: 4rem 1rem 3rem; }
+  .vows { padding: 4rem 1.5rem; }
+}
 
 /* ── Mobile (< 768px) ── */
 @media (max-width: 767px) {
   :root {
-    --space-xl: 4rem;
-    --space-lg: 2.5rem;
+    --space-xl: 3.5rem;
+    --space-lg: 2rem;
   }
 
-  /* Timeline → single column */
+  /* ── Nav: shrink gaps, smaller text ── */
+  .nav {
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav__link {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Hero ── */
+  .hero__content { padding: 1rem; }
+
+  .hero__venue {
+    font-size: 0.72rem;
+    line-height: 1.7;
+  }
+
+  .hero__divider { margin: 0.75rem auto; }
+
+  /* ── Music toggle: hide label on mobile ── */
+  .music-toggle__label { display: none; }
+  .music-toggle { padding: 0.45rem 0.7rem; }
+
+  /* ── Our Story section ── */
+  .story { padding: 3.5rem 1rem 2rem; }
+  .story__header { margin-bottom: 2rem; }
+
+  /* Timeline: override grid, switch to pure flex column */
   .timeline__item {
     display: flex;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0;
+    margin-bottom: 0;
   }
 
   .timeline__connector {
     flex-direction: row;
     align-items: center;
+    padding: 0.5rem 0;
     margin-bottom: 0.75rem;
+    order: 0;
+  }
+
+  .timeline__dot {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
   }
 
   .timeline__line {
@@ -1527,23 +1578,25 @@ a {
 
   .timeline__item:last-child .timeline__line { display: none; }
 
-  .timeline__dot { flex-shrink: 0; margin-right: 0.5rem; }
-
+  /* Image always on top, text below — for both left and right items */
   .timeline__item--left .timeline__image-col,
   .timeline__item--right .timeline__image-col {
     order: 1;
     padding: 0 0 0.75rem !important;
-    grid-column: auto !important;
+    grid-column: unset !important;
+    grid-row: unset !important;
   }
 
   .timeline__item--left .timeline__text-col,
   .timeline__item--right .timeline__text-col {
     order: 2;
-    padding: 0 0 1.5rem !important;
+    padding: 0 0 2rem !important;
     text-align: left !important;
-    grid-column: auto !important;
+    grid-column: unset !important;
+    grid-row: unset !important;
   }
 
+  /* Proposal quote: always left-bordered on mobile */
   .timeline__item--right .story__proposal-quote {
     border-left: 3px solid var(--color-gold);
     border-right: none;
@@ -1551,26 +1604,135 @@ a {
     padding-right: 0;
   }
 
-  /* Gallery → 2 columns on mobile */
-  .gallery__grid { column-count: 2; }
+  .timeline__photo { aspect-ratio: 16 / 9; }
 
-  /* Vows → stacked */
-  .vows__pair { flex-direction: column; align-items: center; }
-  .vows__rings { margin-top: 0; transform: rotate(90deg); }
+  /* ── Gallery ── */
+  .gallery { padding: 3.5rem 0.75rem 2.5rem; }
+  .gallery__grid { column-count: 2; column-gap: 8px; }
+  .gallery__item { margin-bottom: 8px; }
 
-  /* Wedding day photo strip */
-  .wedding-day__photo-strip { height: 180px; }
+  /* Gallery filter: horizontal scroll instead of wrapping mess */
+  .gallery__filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding: 0.25rem 0.5rem 0.75rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+  }
 
-  /* Lightbox nav */
-  .lightbox__prev { left: 0.5rem; }
-  .lightbox__next { right: 0.5rem; }
+  .gallery__filters::-webkit-scrollbar { display: none; }
+
+  .gallery__filter-btn {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  /* Lightbox: bigger touch targets, tighter layout */
+  .lightbox__prev { left: 0.25rem; width: 44px; height: 44px; font-size: 1.8rem; }
+  .lightbox__next { right: 0.25rem; width: 44px; height: 44px; font-size: 1.8rem; }
+  .lightbox__stage { max-width: 96vw; }
+  .lightbox__img { max-width: 96vw; max-height: 72vh; }
+  .lightbox__close { top: 0.75rem; right: 0.75rem; width: 40px; height: 40px; }
+
+  /* ── Wedding Day ── */
+  .wedding-day__photo-strip { height: 160px; }
+
+  .wedding-day__content { padding: 0 1rem; }
+
+  .venue-card {
+    padding: 1.2rem 1.25rem;
+    gap: 1rem;
+  }
+
+  /* ── Vows ── */
+  .vows { padding: 3.5rem 1rem; }
+
+  .vows__pair {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .vow-scroll { width: 100%; max-width: 100%; min-width: unset; }
+
+  .vows__rings {
+    margin: 0;
+    transform: rotate(90deg);
+  }
+
+  .proposal-card {
+    padding: 2rem 1.5rem 1.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .proposal-card__quote-mark {
+    font-size: 5rem;
+    top: 0.25rem;
+    left: 1rem;
+  }
+
+  /* ── Footer ── */
+  .footer { padding: 4rem 1rem 3rem; }
 }
 
-/* ── Very small (< 480px) ── */
+/* ── Small mobile (< 480px) ── */
 @media (max-width: 479px) {
+  /* Gallery: single column below 480px */
   .gallery__grid { column-count: 1; }
-  .venue-card { flex-direction: column; text-align: center; }
+
+  /* Venue card: stacked layout */
+  .venue-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .venue-card__motif { justify-content: center; }
 
-  .music-toggle .music-toggle__label { display: none; }
+  /* Photo strip: taller but fewer — just 2 */
+  .wedding-day__photo-strip { height: 200px; }
+
+  .strip__photo:last-child { display: none; }
+
+  /* Nav: very small, horizontal scroll */
+  .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    gap: 1.25rem;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  /* Section padding */
+  .story, .gallery, .vows { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+  /* Vow scroll body: tighter padding */
+  .vow-scroll__body { padding: 1.5rem 1.25rem 2rem; }
+
+  .proposal-card { padding: 1.75rem 1.25rem 1.5rem; }
+
+  /* Years counter number: smaller on tiny screens */
+  .years-counter__number { font-size: clamp(3rem, 18vw, 5rem); }
+
+  /* Hero tagline: slightly smaller */
+  .hero__tagline { font-size: clamp(1.2rem, 6vw, 1.8rem); }
+}
+
+/* ── Reduce animations on devices that prefer it ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
