@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark & Carmela — Forever and Ever Babe</title>
+  <meta name="description" content="The wedding of Mark Lawrence M. Nicdao and Ana Carmela T. Sevilla — June 16, 2012">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@500;700&family=Lato:wght@300;400;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       NAVIGATION (sticky, appears on scroll)
+  ══════════════════════════════════════════════════ -->
+  <nav class="nav" id="main-nav" aria-label="Page navigation">
+    <a href="#story"      class="nav__link">Our Story</a>
+    <a href="#gallery"    class="nav__link">Gallery</a>
+    <a href="#wedding-day" class="nav__link">Wedding Day</a>
+    <a href="#vows"       class="nav__link">Vows</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════════════════ -->
+  <section id="hero" class="hero" role="banner">
+
+    <!-- Floating petals canvas -->
+    <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+    <!-- Hero background -->
+    <div class="hero__bg" id="hero-bg"
+         style="background-image: url('./resource/Wedding day/DSC_1818.jpg')"
+         role="img"
+         aria-label="Mark and Carmela on their wedding day, June 16, 2012">
+    </div>
+
+    <!-- Overlay gradient -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <!-- Main content -->
+    <div class="hero__content">
+      <p class="hero__eyebrow animate-fade-up">Together in Love</p>
+
+      <div class="hero__names">
+        <h1 class="hero__groom animate-fade-up delay-1">Mark Lawrence</h1>
+
+        <div class="hero__ampersand-wrap animate-scale-in delay-2">
+          <span class="hero__ampersand">&amp;</span>
+          <span class="orbiting-heart" aria-hidden="true">♥</span>
+        </div>
+
+        <h1 class="hero__bride animate-fade-up delay-3">Ana Carmela</h1>
+      </div>
+
+      <div class="hero__divider animate-expand delay-4" aria-hidden="true"></div>
+
+      <p class="hero__date animate-fade-up delay-5">
+        <time datetime="2012-06-16">June 16, 2012</time>
+      </p>
+
+      <p class="hero__venue animate-fade-up delay-6">
+        Immaculate Heart of Mary Parish<br>
+        <span>Teacher's Village, Diliman, Quezon City</span>
+      </p>
+
+      <p class="hero__tagline animate-fade-up delay-7">"Forever and Ever Babe"</p>
+    </div>
+
+    <!-- Music toggle -->
+    <button class="music-toggle" id="music-toggle"
+            aria-label="Toggle background music"
+            aria-pressed="false">
+      <span class="music-bars" aria-hidden="true">
+        <span class="music-bar"></span>
+        <span class="music-bar"></span>
+        <span class="music-bar"></span>
+      </span>
+      <span class="music-toggle__label">Music</span>
+    </button>
+
+    <!-- Scroll cue -->
+    <div class="hero__scroll-cue animate-fade-up delay-8" aria-hidden="true">
+      <span class="scroll-text">Scroll to begin</span>
+      <div class="scroll-chevron"></div>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 2 — OUR STORY
+  ══════════════════════════════════════════════════ -->
+  <section id="story" class="story" aria-labelledby="story-heading">
+
+    <div class="story__header">
+      <p class="section-eyebrow animate-on-scroll">How It All Began</p>
+      <h2 id="story-heading" class="section-title animate-on-scroll">The Space Between Desks</h2>
+      <div class="section-divider animate-on-scroll" aria-hidden="true"></div>
+      <p class="story__intro animate-on-scroll">
+        Two ordinary desks in an ordinary office — but between them, something extraordinary grew quiet and steady, like a prayer answered before it was spoken.
+      </p>
+    </div>
+
+    <div class="timeline" role="list">
+
+      <!-- Milestone 1 — First Meeting -->
+      <article class="timeline__item timeline__item--left animate-on-scroll" role="listitem">
+        <div class="timeline__image-col">
+          <div class="timeline__image-wrap">
+            <img src="./resource/First meeting/IMG_4091.JPG"
+                 alt="Mark and Carmela — early days, the beginning of a beautiful friendship at the office"
+                 loading="lazy"
+                 class="timeline__photo">
+            <div class="timeline__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="timeline__connector" aria-hidden="true">
+          <div class="timeline__dot" data-icon="☕">☕</div>
+          <div class="timeline__line"></div>
+        </div>
+        <div class="timeline__text-col">
+          <span class="timeline__year">The Beginning</span>
+          <h3 class="timeline__milestone">She Was Humming at Her Desk</h3>
+          <p>Mark noticed her first — a melody drifting across the office, a warmth that needed no introduction. She wasn't trying to be remarkable. She just was.</p>
+        </div>
+      </article>
+
+      <!-- Milestone 2 — Growing Closer -->
+      <article class="timeline__item timeline__item--right animate-on-scroll" role="listitem">
+        <div class="timeline__text-col">
+          <span class="timeline__year">Growing Closer</span>
+          <h3 class="timeline__milestone">Faith, Family &amp; Handwritten Notes</h3>
+          <p>She wrote Scripture passages in her beautiful handwriting. She spoke about her family the way people speak about something sacred. He listened — and found himself not wanting the conversations to end.</p>
+        </div>
+        <div class="timeline__connector" aria-hidden="true">
+          <div class="timeline__dot" data-icon="✉">✉</div>
+          <div class="timeline__line"></div>
+        </div>
+        <div class="timeline__image-col">
+          <div class="timeline__image-wrap">
+            <img src="./resource/First meeting/IMG_4107.JPG"
+                 alt="Mark and Carmela sharing quiet conversations — faith and warmth weaving their bond"
+                 loading="lazy"
+                 class="timeline__photo">
+            <div class="timeline__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Milestone 3 — First Dinner -->
+      <article class="timeline__item timeline__item--left animate-on-scroll" role="listitem">
+        <div class="timeline__image-col">
+          <div class="timeline__image-wrap">
+            <img src="./resource/courtship/DSC_0027.JPG"
+                 alt="Mark and Carmela at their first dinner together — a project discussion that became something more"
+                 loading="lazy"
+                 class="timeline__photo">
+            <div class="timeline__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="timeline__connector" aria-hidden="true">
+          <div class="timeline__dot" data-icon="🕯">🕯</div>
+          <div class="timeline__line"></div>
+        </div>
+        <div class="timeline__text-col">
+          <span class="timeline__year">March</span>
+          <h3 class="timeline__milestone">Dinner Under False Pretenses</h3>
+          <p>He asked her to dinner — officially to discuss a project. The project was quickly forgotten. The conversation never ended.</p>
+        </div>
+      </article>
+
+      <!-- Milestone 4 — Meeting the Family -->
+      <article class="timeline__item timeline__item--right animate-on-scroll" role="listitem">
+        <div class="timeline__text-col">
+          <span class="timeline__year">Courtship</span>
+          <h3 class="timeline__milestone">They Called Him "Anak"</h3>
+          <p>When Mark met Carmela's family, they didn't just welcome him — they absorbed him. "Anak," they called him. Son. He understood then why she was the way she was: she came from love, and love had made her.</p>
+        </div>
+        <div class="timeline__connector" aria-hidden="true">
+          <div class="timeline__dot" data-icon="🏡">🏡</div>
+          <div class="timeline__line"></div>
+        </div>
+        <div class="timeline__image-col">
+          <div class="timeline__image-wrap">
+            <img src="./resource/courtship/DSC_0061.JPG"
+                 alt="Mark welcomed warmly by Carmela's family — called anak, son, from the very first day"
+                 loading="lazy"
+                 class="timeline__photo">
+            <div class="timeline__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Milestone 5 — The Proposal -->
+      <article class="timeline__item timeline__item--left animate-on-scroll" role="listitem">
+        <div class="timeline__image-col">
+          <div class="timeline__image-wrap">
+            <img src="./resource/proposal/DSC_0261.JPG"
+                 alt="Mark proposing to Carmela in the chapel where her grandmother prayed for forty years"
+                 loading="lazy"
+                 class="timeline__photo">
+            <div class="timeline__image-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="timeline__connector" aria-hidden="true">
+          <div class="timeline__dot timeline__dot--proposal" data-icon="💍">💍</div>
+        </div>
+        <div class="timeline__text-col">
+          <span class="timeline__year">The Proposal</span>
+          <h3 class="timeline__milestone">A Chapel, Forty Years of Prayers</h3>
+          <p class="story__proposal-quote">
+            "I walked into an office one ordinary day and somehow walked into the rest of my life… Carmela — will you let me spend every day trying to deserve you?"
+          </p>
+          <p>In the quiet chapel near her childhood home — where her grandmother had knelt in prayer for forty years — he knelt too. She said yes.</p>
+        </div>
+      </article>
+
+    </div><!-- /.timeline -->
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 3 — GALLERY
+  ══════════════════════════════════════════════════ -->
+  <section id="gallery" class="gallery" aria-labelledby="gallery-heading">
+
+    <div class="gallery__header">
+      <p class="section-eyebrow animate-on-scroll">Forty Frames of Forever</p>
+      <h2 id="gallery-heading" class="section-title animate-on-scroll">Our Story in Pictures</h2>
+      <div class="section-divider animate-on-scroll" aria-hidden="true"></div>
+    </div>
+
+    <!-- Filter tabs -->
+    <nav class="gallery__filters" aria-label="Filter gallery by chapter" role="tablist">
+      <button class="gallery__filter-btn active" data-filter="all"          role="tab" aria-selected="true">All</button>
+      <button class="gallery__filter-btn"         data-filter="first-meeting" role="tab" aria-selected="false">First Meeting</button>
+      <button class="gallery__filter-btn"         data-filter="courtship"    role="tab" aria-selected="false">Courtship</button>
+      <button class="gallery__filter-btn"         data-filter="proposal"     role="tab" aria-selected="false">Proposal</button>
+      <button class="gallery__filter-btn"         data-filter="wedding-day"  role="tab" aria-selected="false">Wedding Day</button>
+    </nav>
+
+    <!-- Masonry grid -->
+    <div class="gallery__grid" id="gallery-grid" role="tabpanel" aria-live="polite">
+
+      <!-- ── FIRST MEETING (8 photos) ── -->
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/13952_1163459540310_1642503053_506338_6568977_n.jpg"
+              data-caption="Mark &amp; Carmela — First Meeting">
+        <img src="./resource/First meeting/13952_1163459540310_1642503053_506338_6568977_n.jpg"
+             alt="Mark and Carmela — early days, a friendship beginning to bloom"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/30129_121675251185358_100000286523942_228079_1420369_n.jpg"
+              data-caption="Mark &amp; Carmela — The Beginning">
+        <img src="./resource/First meeting/30129_121675251185358_100000286523942_228079_1420369_n.jpg"
+             alt="Mark and Carmela — beginnings of a love story"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/9924_1122199134672_1217893841_30306399_720202_n.jpg"
+              data-caption="Mark &amp; Carmela — Early Memories">
+        <img src="./resource/First meeting/9924_1122199134672_1217893841_30306399_720202_n.jpg"
+             alt="Early memories — Mark and Carmela before they knew how the story would end"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/9924_1122199174673_1217893841_30306400_8169697_n.jpg"
+              data-caption="Mark &amp; Carmela — Together from the Start">
+        <img src="./resource/First meeting/9924_1122199174673_1217893841_30306400_8169697_n.jpg"
+             alt="Together from the start — Mark and Carmela's early days"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/bdo 242.jpg"
+              data-caption="Mark &amp; Carmela — A Smile Worth Everything">
+        <img src="./resource/First meeting/bdo 242.jpg"
+             alt="A smile worth everything — Carmela and Mark in their early days"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/IMG_4091.JPG"
+              data-caption="Mark &amp; Carmela — When Everything Started">
+        <img src="./resource/First meeting/IMG_4091.JPG"
+             alt="When everything started — Mark and Carmela at the office"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/IMG_4107.JPG"
+              data-caption="Mark &amp; Carmela — A Story Waiting to be Written">
+        <img src="./resource/First meeting/IMG_4107.JPG"
+             alt="A story waiting to be written — Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="first-meeting"
+              data-src="./resource/First meeting/Picture-0059.jpg"
+              data-caption="Mark &amp; Carmela — The Space Between Desks">
+        <img src="./resource/First meeting/Picture-0059.jpg"
+             alt="The space between desks — where it all began for Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">First Meeting</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <!-- ── COURTSHIP (7 photos) ── -->
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0027.JPG"
+              data-caption="Mark &amp; Carmela — Courtship">
+        <img src="./resource/courtship/DSC_0027.JPG"
+             alt="Mark and Carmela during courtship — learning the shape of each other's laughter"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0061.JPG"
+              data-caption="Mark &amp; Carmela — Chosen">
+        <img src="./resource/courtship/DSC_0061.JPG"
+             alt="Chosen — Mark and Carmela growing closer with every shared moment"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0083.JPG"
+              data-caption="Mark &amp; Carmela — Two Hearts">
+        <img src="./resource/courtship/DSC_0083.JPG"
+             alt="Two hearts finding their rhythm — Mark and Carmela during courtship"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0084.JPG"
+              data-caption="Mark &amp; Carmela — Growing Together">
+        <img src="./resource/courtship/DSC_0084.JPG"
+             alt="Growing together — Mark and Carmela discovering what love looks like in ordinary moments"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0106.JPG"
+              data-caption="Mark &amp; Carmela — In Every Moment">
+        <img src="./resource/courtship/DSC_0106.JPG"
+             alt="In every moment — the quiet tenderness of Mark and Carmela's courtship"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0125.JPG"
+              data-caption="Mark &amp; Carmela — Falling">
+        <img src="./resource/courtship/DSC_0125.JPG"
+             alt="Falling — Mark and Carmela's hearts drawn toward each other"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="courtship"
+              data-src="./resource/courtship/DSC_0134.JPG"
+              data-caption="Mark &amp; Carmela — Before the Question">
+        <img src="./resource/courtship/DSC_0134.JPG"
+             alt="Before the question — two people already knowing the answer"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Courtship</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <!-- ── PROPOSAL (7 photos) ── -->
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0261.JPG"
+              data-caption="The Proposal — She Said Yes">
+        <img src="./resource/proposal/DSC_0261.JPG"
+             alt="The proposal — Mark on one knee in the chapel, Carmela's answer a beautiful yes"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0269.JPG"
+              data-caption="The Proposal — A Sacred Yes">
+        <img src="./resource/proposal/DSC_0269.JPG"
+             alt="A sacred yes — the moment everything changed for Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0330.JPG"
+              data-caption="The Proposal — Forty Years of Prayers Answered">
+        <img src="./resource/proposal/DSC_0330.JPG"
+             alt="Forty years of prayers answered — the chapel where Mark proposed to Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0334.JPG"
+              data-caption="The Proposal — Joy">
+        <img src="./resource/proposal/DSC_0334.JPG"
+             alt="Pure joy — Mark and Carmela after the proposal"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0344.JPG"
+              data-caption="The Proposal — Forever Decided">
+        <img src="./resource/proposal/DSC_0344.JPG"
+             alt="Forever decided — Mark and Carmela's engagement"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0355.JPG"
+              data-caption="The Proposal — Engaged">
+        <img src="./resource/proposal/DSC_0355.JPG"
+             alt="Engaged — the beginning of the forever they chose together"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="proposal"
+              data-src="./resource/proposal/DSC_0381.JPG"
+              data-caption="The Proposal — The Ring, The Promise">
+        <img src="./resource/proposal/DSC_0381.JPG"
+             alt="The ring, the promise — Mark and Carmela's engagement"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Proposal</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <!-- ── WEDDING DAY (18 photos) ── -->
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_1818.jpg"
+              data-caption="June 16, 2012 — Together at Last">
+        <img src="./resource/Wedding day/DSC_1818.jpg"
+             alt="Mark and Carmela on their wedding day, June 16, 2012 — radiant and forever"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_1834.jpg"
+              data-caption="June 16, 2012 — The Ceremony Begins">
+        <img src="./resource/Wedding day/DSC_1834.jpg"
+             alt="The ceremony begins — Mark and Carmela at the Immaculate Heart of Mary Parish"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_1908.jpg"
+              data-caption="June 16, 2012 — Sacred Vows">
+        <img src="./resource/Wedding day/DSC_1908.jpg"
+             alt="Sacred vows — Mark and Carmela exchanging promises at the altar"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2000.jpg"
+              data-caption="June 16, 2012 — Two Became One">
+        <img src="./resource/Wedding day/DSC_2000.jpg"
+             alt="Two became one — the moment Mark and Carmela were officially wed"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2024.jpg"
+              data-caption="June 16, 2012 — The Kiss">
+        <img src="./resource/Wedding day/DSC_2024.jpg"
+             alt="The kiss that sealed a lifetime — Mark and Carmela's first kiss as husband and wife"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2065.jpg"
+              data-caption="June 16, 2012 — The Groom">
+        <img src="./resource/Wedding day/DSC_2065.jpg"
+             alt="Mark on his wedding day — the groom who showed up with his whole heart"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2154.jpg"
+              data-caption="June 16, 2012 — The Bride">
+        <img src="./resource/Wedding day/DSC_2154.jpg"
+             alt="Carmela on her wedding day — luminous, radiant, and deeply beloved"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2219.jpg"
+              data-caption="June 16, 2012 — Joy Uncontained">
+        <img src="./resource/Wedding day/DSC_2219.jpg"
+             alt="Joy uncontained — celebrating the union of Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2237.jpg"
+              data-caption="June 16, 2012 — Together">
+        <img src="./resource/Wedding day/DSC_2237.jpg"
+             alt="Together — Mark and Carmela, husband and wife"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2490.jpg"
+              data-caption="June 16, 2012 — Forever Begins">
+        <img src="./resource/Wedding day/DSC_2490.jpg"
+             alt="Forever begins — the celebration of Mark and Carmela's love"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2720.jpg"
+              data-caption="June 16, 2012 — Laughter and Love">
+        <img src="./resource/Wedding day/DSC_2720.jpg"
+             alt="Laughter and love — Mark and Carmela on their wedding day"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2810.jpg"
+              data-caption="June 16, 2012 — Surrounded by Love">
+        <img src="./resource/Wedding day/DSC_2810.jpg"
+             alt="Surrounded by love — family and friends celebrating Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2841.jpg"
+              data-caption="June 16, 2012 — A Moment Frozen in Gold">
+        <img src="./resource/Wedding day/DSC_2841.jpg"
+             alt="A moment frozen in gold — Mark and Carmela's wedding day"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_2987.jpg"
+              data-caption="June 16, 2012 — The Best Day">
+        <img src="./resource/Wedding day/DSC_2987.jpg"
+             alt="The best day — Mark and Carmela's wedding celebration"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_3089.jpg"
+              data-caption="June 16, 2012 — Husband &amp; Wife">
+        <img src="./resource/Wedding day/DSC_3089.jpg"
+             alt="Husband and wife — Mark and Carmela, bound by vows and love"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_6866.jpg"
+              data-caption="June 16, 2012 — In This Moment">
+        <img src="./resource/Wedding day/DSC_6866.jpg"
+             alt="In this moment — all of it perfect for Mark and Carmela"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_7181.jpg"
+              data-caption="June 16, 2012 — The Promise Kept">
+        <img src="./resource/Wedding day/DSC_7181.jpg"
+             alt="The promise kept — Mark and Carmela's everlasting commitment"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+      <figure class="gallery__item animate-on-scroll" data-category="wedding-day"
+              data-src="./resource/Wedding day/DSC_8456.jpg"
+              data-caption="June 16, 2012 — Forever and Ever Babe">
+        <img src="./resource/Wedding day/DSC_8456.jpg"
+             alt="Forever and ever — the final frame of Mark and Carmela's perfect wedding day"
+             loading="lazy" class="gallery__img">
+        <figcaption class="gallery__caption">Wedding Day</figcaption>
+        <div class="gallery__item-overlay" aria-hidden="true">
+          <span class="gallery__zoom-icon">⊕</span>
+        </div>
+      </figure>
+
+    </div><!-- /#gallery-grid -->
+
+    <!-- Lightbox -->
+    <div class="lightbox-backdrop" id="lightbox-backdrop" aria-hidden="true"></div>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+      <div class="lightbox__sparkle lightbox__sparkle--tl" aria-hidden="true"></div>
+      <div class="lightbox__sparkle lightbox__sparkle--br" aria-hidden="true"></div>
+      <div class="lightbox__stage">
+        <img src="" alt="" id="lightbox-img" class="lightbox__img">
+        <p class="lightbox__caption" id="lightbox-caption"></p>
+        <span class="lightbox__counter" id="lightbox-counter"></span>
+      </div>
+      <button class="lightbox__close" id="lightbox-close" aria-label="Close photo viewer">✕</button>
+      <button class="lightbox__prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+      <button class="lightbox__next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 4 — THE WEDDING DAY
+  ══════════════════════════════════════════════════ -->
+  <section id="wedding-day" class="wedding-day" aria-labelledby="weddingday-heading">
+
+    <!-- Photo strip -->
+    <div class="wedding-day__photo-strip" aria-hidden="true">
+      <img src="./resource/Wedding day/DSC_1834.jpg" alt="" loading="lazy" class="strip__photo">
+      <img src="./resource/Wedding day/DSC_1908.jpg" alt="" loading="lazy" class="strip__photo">
+      <img src="./resource/Wedding day/DSC_2000.jpg" alt="" loading="lazy" class="strip__photo">
+    </div>
+
+    <div class="wedding-day__content">
+
+      <p class="section-eyebrow animate-on-scroll">The Day It Was Made Official</p>
+      <h2 id="weddingday-heading" class="section-title animate-on-scroll" style="color: var(--color-ivory);">June 16, 2012</h2>
+      <div class="section-divider animate-on-scroll" aria-hidden="true"></div>
+
+      <!-- Venue card -->
+      <div class="venue-card animate-on-scroll">
+        <div class="venue-card__icon" aria-hidden="true">⛪</div>
+        <div class="venue-card__details">
+          <h3 class="venue-card__name">Immaculate Heart of Mary Parish</h3>
+          <p class="venue-card__address">Teacher's Village, Diliman, Quezon City</p>
+          <p class="venue-card__motif">
+            <span class="motif-swatch" aria-label="Royal Blue motif" style="background:#1A3A8F;"></span>
+            Royal Blue Motif
+          </p>
+        </div>
+      </div>
+
+      <!-- Forever Begins Now badge -->
+      <div class="forever-badge animate-on-scroll" aria-label="Forever Begins Now">
+        <div class="forever-badge__ring forever-badge__ring--outer" aria-hidden="true"></div>
+        <div class="forever-badge__ring forever-badge__ring--inner" aria-hidden="true"></div>
+        <div class="forever-badge__text">
+          <p class="forever-badge__line1">Forever</p>
+          <p class="forever-badge__line2">Begins Now</p>
+        </div>
+      </div>
+
+      <!-- Years counter (Nano Banana) -->
+      <div class="years-counter animate-on-scroll" id="years-counter-wrap" aria-live="polite">
+        <span class="years-counter__number" id="years-count">0</span>
+        <span class="years-counter__label">years and counting</span>
+        <p class="years-counter__sub">"Forever and Ever Babe"</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 5 — THE VOWS
+  ══════════════════════════════════════════════════ -->
+  <section id="vows" class="vows" aria-labelledby="vows-heading">
+
+    <div class="vows__header">
+      <p class="section-eyebrow animate-on-scroll">Words That Bound Two Souls</p>
+      <h2 id="vows-heading" class="section-title animate-on-scroll">The Vows</h2>
+      <div class="section-divider animate-on-scroll" aria-hidden="true"></div>
+    </div>
+
+    <div class="vows__pair">
+
+      <!-- Mark's vow -->
+      <article class="vow-scroll vow-scroll--groom animate-on-scroll"
+               aria-labelledby="mark-vow-heading">
+        <div class="vow-scroll__ribbon vow-scroll__ribbon--top" aria-hidden="true"></div>
+        <div class="vow-scroll__body">
+          <div class="vow-scroll__portrait">
+            <img src="./resource/Wedding day/DSC_2065.jpg"
+                 alt="Mark Lawrence on his wedding day"
+                 loading="lazy"
+                 class="vow-scroll__portrait-img">
+          </div>
+          <h3 id="mark-vow-heading" class="vow-scroll__name">Mark Lawrence</h3>
+          <p class="vow-scroll__role">The Groom</p>
+          <blockquote class="vow-scroll__text typewriter-pending" id="mark-vow-text">
+            "I take you as my person — not because you are perfect, but because you are perfectly mine. I promise to love you not only on the days when love comes easily, but on the quiet, difficult days when it asks something of us. I vow to meet you halfway, always — in every argument, in every dream, in every season of our life together. When we disagree, I will choose understanding over pride. When life grows heavy, I will carry what I can so you carry less. I will fall in love with you again and again — in the morning light, in your laughter, in the way you see the world. You are not just the person I want beside me. You are the reason I want to be better. Today, tomorrow, and in every ordinary moment in between — I am yours."
+          </blockquote>
+          <div class="vow-scroll__quill" aria-hidden="true">✒</div>
+        </div>
+        <div class="vow-scroll__ribbon vow-scroll__ribbon--bottom" aria-hidden="true"></div>
+      </article>
+
+      <!-- Center rings -->
+      <div class="vows__rings" aria-hidden="true">
+        <div class="ring ring--left"></div>
+        <div class="ring ring--right"></div>
+      </div>
+
+      <!-- Carmela's vow -->
+      <article class="vow-scroll vow-scroll--bride animate-on-scroll"
+               aria-labelledby="carmela-vow-heading">
+        <div class="vow-scroll__ribbon vow-scroll__ribbon--top" aria-hidden="true"></div>
+        <div class="vow-scroll__body">
+          <div class="vow-scroll__portrait">
+            <img src="./resource/Wedding day/DSC_2154.jpg"
+                 alt="Ana Carmela on her wedding day"
+                 loading="lazy"
+                 class="vow-scroll__portrait-img">
+          </div>
+          <h3 id="carmela-vow-heading" class="vow-scroll__name">Ana Carmela</h3>
+          <p class="vow-scroll__role">The Bride</p>
+          <blockquote class="vow-scroll__text typewriter-pending" id="carmela-vow-text">
+            "I choose you — not just today, in the beauty of this moment, but on every day that follows. I promise to love you with patience when patience is hard, and with grace when grace doesn't come naturally. I vow to be your safe place — the one you return to, the one who stays. When life pulls us in different directions, I will always find my way back to you. I promise to listen more than I speak, to forgive more than I hold on, and to remind you — even when the world forgets — of how extraordinary you are. Our love will not always look like this moment, dressed in flowers and vows. Sometimes it will look like a quiet cup of coffee, a hand held in the dark, a choice made again and again to stay. And I will make that choice, every single day, for the rest of my life. I am yours — completely, joyfully, forever."
+          </blockquote>
+          <div class="vow-scroll__quill" aria-hidden="true">✒</div>
+        </div>
+        <div class="vow-scroll__ribbon vow-scroll__ribbon--bottom" aria-hidden="true"></div>
+      </article>
+
+    </div><!-- /.vows__pair -->
+
+    <!-- Proposal quote card -->
+    <div class="proposal-card animate-on-scroll">
+      <div class="proposal-card__quote-mark" aria-hidden="true">"</div>
+      <blockquote class="proposal-card__text">
+        I walked into an office one ordinary day and somehow walked into the rest of my life. You showed me what it looks like to love fiercely — your family, your faith, your whole beautiful self. I don't want to learn how to live without that. I don't want to learn how to live without you. Carmela — will you let me spend every day trying to deserve you?
+      </blockquote>
+      <cite class="proposal-card__attribution">— Mark, at the chapel</cite>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SECTION 6 — FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer" role="contentinfo">
+
+    <canvas id="hearts-canvas" aria-hidden="true"></canvas>
+
+    <div class="footer__content">
+
+      <div class="footer__names animate-on-scroll">
+        <span class="footer__name">Mark Lawrence</span>
+        <span class="footer__heart" aria-hidden="true">♥</span>
+        <span class="footer__name">Ana Carmela</span>
+      </div>
+
+      <div class="footer__divider" aria-hidden="true"></div>
+
+      <p class="footer__tagline animate-on-scroll">"Forever and Ever Babe"</p>
+
+      <p class="footer__date animate-on-scroll">
+        <time datetime="2012-06-16">June 16, 2012</time>
+      </p>
+
+      <p class="footer__venue animate-on-scroll">
+        Immaculate Heart of Mary Parish &middot; Diliman, Quezon City
+      </p>
+
+      <div class="footer__rings animate-on-scroll" aria-label="Wedding rings">
+        <div class="footer__ring footer__ring--1"></div>
+        <div class="footer__ring footer__ring--2"></div>
+      </div>
+
+      <p class="footer__closing animate-on-scroll">Made with love, for love, forever.</p>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
