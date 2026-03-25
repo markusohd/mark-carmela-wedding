@@ -1208,13 +1208,49 @@ a {
    11. VOWS SECTION
    ============================================================ */
 .vows {
-  background: linear-gradient(135deg, var(--color-ivory) 0%, #EEF2FF 50%, var(--color-ivory) 100%);
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(212, 175, 55, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(212, 175, 55, 0.10) 0%, transparent 50%),
+    linear-gradient(160deg, #0a1d52 0%, #0D2461 40%, #122a70 70%, #0a1d52 100%);
   padding: var(--space-xl) var(--space-sm);
+  position: relative;
+  overflow: hidden;
 }
 
-.vows .section-title { color: var(--color-deep-navy); }
+/* Subtle gold filigree overlay pattern */
+.vows::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(212,175,55,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
 
-.vows__header { text-align: center; margin-bottom: var(--space-lg); }
+/* Gold shimmer lines top & bottom */
+.vows::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), var(--color-gold-bright), var(--color-gold), transparent);
+}
+
+.vows .section-eyebrow { color: var(--color-gold); }
+
+.vows .section-title { color: var(--color-ivory); }
+.vows .section-title:hover {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright), var(--color-gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 1.5s linear;
+}
+
+.vows__header { text-align: center; margin-bottom: var(--space-lg); position: relative; z-index: 1; }
 
 .vows__pair {
   display: flex;
@@ -1224,6 +1260,8 @@ a {
   max-width: 1000px;
   margin: 0 auto var(--space-lg);
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 /* Scroll card */
@@ -1231,9 +1269,9 @@ a {
   flex: 1;
   min-width: 280px;
   max-width: 420px;
-  background: var(--color-warm-white);
+  background: rgba(255, 252, 245, 0.97);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -1269,6 +1307,17 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+}
+
+/* Mark's photo: face is upper-left of frame (two people visible) */
+.vow-scroll__portrait-img--mark {
+  object-position: 28% 8%;
+}
+
+/* Carmela's photo: centered, face near top third */
+.vow-scroll__portrait-img--carmela {
+  object-position: center 10%;
 }
 
 .vow-scroll__name {
@@ -1347,11 +1396,15 @@ a {
 .proposal-card {
   max-width: 720px;
   margin: 0 auto;
-  background: var(--color-deep-navy);
+  position: relative;
+  z-index: 1;
+  background: rgba(6, 14, 40, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: var(--radius-lg);
   padding: 3rem 3rem 2.5rem;
   position: relative;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.08);
+  backdrop-filter: blur(4px);
 }
 
 .proposal-card__quote-mark {
